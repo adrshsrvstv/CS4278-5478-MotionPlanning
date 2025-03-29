@@ -1,0 +1,19 @@
+{
+    "name": "adacomp-prebuilt",
+    "image": "adacomplab/ros_kinetic:latest",
+    "overrideCommand": false,
+    "appPort": "6080:80",
+    "runArgs": [
+      "--init"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/ir/catkin_ws,type=bind",
+    "workspaceFolder": "/home/ir/catkin_ws",
+      "mounts": [
+          {
+              "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history",
+              "target": "/home/vscode/.bash_history",
+              "type": "bind"
+          }
+      ]
+  }
+  

@@ -1,0 +1,25 @@
+{
+  "name": "osrf-custom-kinetic",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--privileged",
+    "--network=host"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/ir/catkin_ws,type=bind",
+  "workspaceFolder": "/home/ir/catkin_ws",
+  "containerEnv": {
+    	"DISPLAY": "${localEnv:DISPLAY}"
+    },
+	"mounts": [
+		{
+			"source": "/tmp/.X11-unix",
+			"target": "/tmp/.X11-unix",
+			"type": "bind"
+		},
+		{
+			"source": "${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history",
+			"target": "/home/vscode/.bash_history",
+			"type": "bind"
+		}
+    ]
+}
